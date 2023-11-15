@@ -11,3 +11,23 @@ class HotelOrder:
         self.__stay_days = stay_days
         self.__cost_per_day = cost_per_day
         self.__total_cost = stay_days * cost_per_day
+
+    def display_order(self):
+        print("Замовлення:")
+        print("Клієнт:", self.__client_name)
+        print("Тип кімнати:", self.__room_type)
+        print("Кількість днів проживання:", self.__stay_days)
+        print("Вартість за день:", self.__cost_per_day)
+        print("Загальна вартість:", self.__total_cost)
+
+    def update_room_type(self, new_room_type):
+        self.__room_type = new_room_type
+        print("Тип кімнати оновлено.")
+
+    def update_stay_days(self, new_stay_days):
+        self.__stay_days = new_stay_days
+        self.__total_cost = new_stay_days * self.__cost_per_day
+        print("Кількість днів проживання оновлено.")
+
+    def get_total_cost(self):
+        return self.__total_cost
