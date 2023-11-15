@@ -66,4 +66,18 @@ class TaxiManagementSystem:
             return None
 
 
+taxi_system = TaxiManagementSystem()
 
+taxi_system.add_order("Буданов", "вул. Незалежності, 10", "Бізнес", 150)
+taxi_system.add_order("Петренко", "бл-р. Лесі Українки, 25", "Комфорт", 250)
+
+taxi_system.display_orders()
+
+taxi_system.update_order_address(1, "вул. Нова, 5")
+taxi_system.update_order_car_type(0, "Бізнес")
+
+removed_order = taxi_system.remove_order(1)
+
+if removed_order:
+    print("Видалено замовлення:")
+    removed_order.display_order()
