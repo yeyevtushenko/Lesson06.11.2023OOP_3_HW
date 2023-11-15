@@ -31,3 +31,12 @@ class HotelOrder:
 
     def get_total_cost(self):
         return self.__total_cost
+
+class HotelManagementSystem:
+    def __init__(self):
+        self.orders = []
+
+    def add_order(self, client_name, room_type, stay_days, cost_per_day):
+        new_order = HotelOrder(client_name, room_type, stay_days, cost_per_day)
+        self.orders.append(new_order)
+        print("Замовлення додано.")
