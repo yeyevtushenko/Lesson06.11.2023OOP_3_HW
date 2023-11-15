@@ -40,3 +40,30 @@ class HotelManagementSystem:
         new_order = HotelOrder(client_name, room_type, stay_days, cost_per_day)
         self.orders.append(new_order)
         print("Замовлення додано.")
+
+    def display_orders(self):
+        print("Список замовлень:")
+        for order in self.orders:
+            order.display_order()
+            print("\n")
+
+    def update_order_room_type(self, order_index, new_room_type):
+        if 0 <= order_index < len(self.orders):
+            self.orders[order_index].update_room_type(new_room_type)
+        else:
+            print("Некоректний індекс замовлення.")
+
+    def update_order_stay_days(self, order_index, new_stay_days):
+        if 0 <= order_index < len(self.orders):
+            self.orders[order_index].update_stay_days(new_stay_days)
+        else:
+            print("Некоректний індекс замовлення.")
+
+    def remove_order(self, order_index):
+        if 0 <= order_index < len(self.orders):
+            removed_order = self.orders.pop(order_index)
+            print("Замовлення видалено.")
+            return removed_order
+        else:
+            print("Некоректний індекс замовлення.")
+            return None
