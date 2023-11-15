@@ -67,3 +67,21 @@ class HotelManagementSystem:
         else:
             print("Некоректний індекс замовлення.")
             return None
+
+hotel_system = HotelManagementSystem()
+
+
+hotel_system.add_order("Джон Шевченко", "Single Room", 5, 100)
+hotel_system.add_order("Жанна д'Арк", "Double Room", 3, 150)
+
+hotel_system.display_orders()
+
+hotel_system.update_order_room_type(1, "Deluxe Room")
+hotel_system.update_order_stay_days(2, 4)
+
+hotel_system.display_orders()
+
+removed_order = hotel_system.remove_order(1)
+print("Видалено замовлення:", removed_order)
+
+hotel_system.display_orders()
