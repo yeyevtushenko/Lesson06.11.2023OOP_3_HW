@@ -1,16 +1,13 @@
-# This is a sample Python script.
-
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+# Створіть систему управління замовленнями готелю.
+# Кожне замовлення має містити інформацію про клієнта, тип кімнати,
+# кількість днів проживання та вартість. Реалізуйте методи для додавання замовлення,
+# зміни типу кімнати та кількості днів, а також видалення замовлення.
+# Використайте інкапсуляцію для захисту вартості від неправильних змін.
+print("Завдання №1")
+class HotelOrder:
+    def __init__(self, client_name, room_type, stay_days, cost_per_day):
+        self.__client_name = client_name
+        self.__room_type = room_type
+        self.__stay_days = stay_days
+        self.__cost_per_day = cost_per_day
+        self.__total_cost = stay_days * cost_per_day
